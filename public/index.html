@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VICTORIA & ERNEST</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="src/img/favicon.png" rel="icon" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="background"></div>
+<div class="background2"></div>
+<div class="background3"></div>
+
+<div class="music-container">
+    <div class="checkmark-container">
+        <div class="checkmark"></div>
+        <div class="checkmark"></div>
+    </div>
+    <button id="toggle-music" class="music-button">
+        <i class="fas fa-volume-mute"></i>
+    </button>
+    <input type="range" id="volume-control" class="volume-slider hidden1" min="0" max="100" value="100">
+    <audio id="background-music" loop>
+        <source src="src/music/background-music1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<div class="invitation">
+    <div class="text-container">
+        <div class="save-the-date">Save the Date</div>
+        <div class="names">VICTORIA &<br>ERNEST</div>
+        <div class="location">OCTOBER 12, 2024<br>MOSCOW, RUSSIA</div>
+    </div>
+</div>
+
+<div class="photo hidden">
+    <img src="src/img/couple.jpg" alt="Сладкая парочка">
+</div>
+
+<div class="date-container hidden">
+    <div class="date">12<br>10<br>24</div>
+    <div class="invitation-text">
+        <p>Приглашаем Вас отпраздновать вместе с нами самый особенный день нашей жизни. Ваше присутствие будет незабываемым подарком для нас на нашей свадьбе!</p>
+    </div>
+</div>
+
+<!-- Calendar Section -->
+<div class="calendar-container hidden">
+    <h2>Октябрь</h2>
+    <div class="calendar">
+        <div class="month">
+        </div>
+        <ul class="weekdays">
+            <li>Пн</li>
+            <li>Вт</li>
+            <li>Ср</li>
+            <li>Чт</li>
+            <li>Пт</li>
+            <li>Сб</li>
+            <li>Вс</li>
+        </ul>
+        <ul class="days">
+            <!-- Days will be dynamically added here by JavaScript -->
+        </ul>
+        <button id="add-to-calendar" class="btn btn-primary">Добавить в календарь</button>
+    </div>
+</div>
+
+<div class="interactive-text hidden">
+    <div class="static-text">Любовь - это...</div>
+    <div class="dynamic-text">
+        <span id="dynamic-text-content"></span><span class="cursor">|</span>
+    </div>
+</div>
+
+<div class="event-container hidden">
+    <div class="event hidden">
+        <h2>Церемония</h2>
+        <p>Московская область, д. Барвиха, деревня Барвиха, 114 ст3</p>
+        <button class="map-button" data-bs-toggle="modal" data-bs-target="#mapModal" data-coordinates="[55.738231, 37.259082]">Карта</button>
+    </div>
+    <div class="event hidden">
+        <h2>Локация</h2>
+        <p>Москва, пос. Десеневское, деревня Черепово, дом 18в</p>
+        <button class="map-button" data-bs-toggle="modal" data-bs-target="#mapModal" data-coordinates="[55.490223, 37.402408]">Карта</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mapModalLabel">Выходя из дома, не забудьте захватить с собой хорошее настроение! 👰🤵💍</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="map" style="width: 100%; height: 400px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="video-container hidden">
+    <video id="couple-video" loop autoplay muted>
+        <source src="src/video/couple.mp4" type="video/mp4">
+        Ваш браузер не поддерживает тег видео.
+    </video>
+</div>
+
+<div class="timeline hidden">
+    <h2>План дня</h2>
+    <div class="timeline-line">
+        <div class="box">
+            <img src="src/img/icon1.png" alt="icon">
+        </div>
+        <div class="box">
+            <p>14:30<br>Церемония</p>
+        </div>
+        <div class="box">
+            <img src="src/img/icon3.png" alt="icon">
+        </div>
+    </div>
+    <div class="horizontal-divider">
+        <div class="vertical-divider"></div>
+        <div class="vertical-divider"></div>
+        <div class="vertical-divider"></div>
+    </div>
+    <div class="timeline-line">
+        <div class="box">
+            <p>14:00<br>Сбор</p>
+        </div>
+        <div class="box">
+            <img src="src/img/icon2.png" alt="icon">
+        </div>
+        <div class="box">
+            <p>17:00<br>Банкет</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="details">
+    <h2 class="hidden">Пожелания</h2>
+    <div class="divider hidden">✧</div>
+    <p class="hidden">Будем благодарны, если Вы воздержитесь от криков "горько" на празднике. Для нас поцелуй - знак выражения чувств, он не может быть по заказу.</p>
+    <p class="hidden">Мы ценим любые Ваши пожелания и предложения, чтобы сделать этот день еще более незабываемым!</p>
+</div>
+
+<div class="details">
+    <h2 class="hidden">Детали</h2>
+    <div class="divider hidden">✧</div>
+    <p class="hidden">Мы очень стараемся сделать праздник красивым и будем рады, если в своих нарядах Вы поддержите цветовую гамму и стиль нашей свадьбы</p>
+    <div class="colors hidden">
+        <div class="color-circle color-1"></div>
+        <div class="color-circle color-2"></div>
+        <div class="color-circle color-3"></div>
+        <div class="color-circle color-4"></div>
+        <div class="color-circle color-5"></div>
+        <div class="color-circle color-6"></div>
+    </div>
+    <p class="hidden">В течение всего праздника будет проводиться увлекательная лотерея с множеством интересных призов. Не забудьте получить свой билет при входе и проверить удачу!</p>
+    <p class="hidden">Мы предоставим каждому гостю маленький подарок на память о нашем дне. Не забудьте забрать его с собой!</p>
+</div>
+
+<div class="details">
+    <div class="divider hidden">✧</div>
+</div>
+
+<!-- Countdown Timer -->
+<div class="countdown">
+    <h2>Ждем вас через...</h2>
+
+    <div class="time">
+        <div id="days-container">
+            <svg viewBox="0 0 36 36">
+                <circle class="circle-bg" cx="18" cy="18" r="16"></circle>
+                <circle class="circle-progress" cx="18" cy="18" r="16"></circle>
+            </svg>
+            <span id="days">0</span>
+            <div>дней</div>
+        </div>
+        <div id="hours-container">
+            <svg viewBox="0 0 36 36">
+                <circle class="circle-bg" cx="18" cy="18" r="16"></circle>
+                <circle class="circle-progress" cx="18" cy="18" r="16"></circle>
+            </svg>
+            <span id="hours">0</span>
+            <div>часов</div>
+        </div>
+        <div id="minutes-container">
+            <svg viewBox="0 0 36 36">
+                <circle class="circle-bg" cx="18" cy="18" r="16"></circle>
+                <circle class="circle-progress" cx="18" cy="18" r="16"></circle>
+            </svg>
+            <span id="minutes">0</span>
+            <div>минут</div>
+        </div>
+        <div id="seconds-container">
+            <svg viewBox="0 0 36 36">
+                <circle class="circle-bg" cx="18" cy="18" r="16"></circle>
+                <circle class="circle-progress" cx="18" cy="18" r="16"></circle>
+            </svg>
+            <span id="seconds">0</span>
+            <div>секунд</div>
+        </div>
+    </div>
+</div>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=280739b2-c2da-410c-8954-266594fa2827&lang=ru_RU"></script>
+</body>
+</html>
